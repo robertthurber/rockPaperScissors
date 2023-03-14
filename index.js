@@ -1,3 +1,11 @@
+// this is the game method that will automatically run the game five times. next step is to get player input to play 
+function game(){
+    for (let i = 0; i < 5; i++){
+        let gamePlayed = playRound(playerChoice, getComputerChoice());
+        console.log(gamePlayed);
+    }
+}
+
 // the function will play a round of rock paper scissor. It reads from getComputerChoice function and playerChoice variable 
 function playRound(playerSelection, computerSelection){
     // turning the results to lower case so it doesn't matter what someone enters or if anything somehow would get jacked up.
@@ -5,19 +13,19 @@ function playRound(playerSelection, computerSelection){
     computerSelection = computerSelection.toLowerCase();
     // logic for the game itself 
     if (playerSelection === "rock" && computerSelection === "paper"){
-        console.log(`You selected ${playerSelection}, the computer selected ${computerSelection}: you loss :( `)
+        return `You selected ${playerSelection}, the computer selected ${computerSelection}: you loss :( `;
     }else if (playerSelection === "rock" && computerSelection === "scissors"){
-        console.log(`You selected ${playerSelection}, the computer selected ${computerSelection}: you Win :) `)
+        return `You selected ${playerSelection}, the computer selected ${computerSelection}: you Win :) `;
     }else if (playerSelection === "paper" && computerSelection === "rock"){
-        console.log(`You selected ${playerSelection}, the computer selected ${computerSelection}: you Win :) `)
+        return `You selected ${playerSelection}, the computer selected ${computerSelection}: you Win :) `;
     }else if (playerSelection === "paper" && computerSelection === "scissors"){
-        console.log(`You selected ${playerSelection}, the computer selected ${computerSelection}: you loss :( `)
+        return `You selected ${playerSelection}, the computer selected ${computerSelection}: you loss :( `;
     }else if (playerSelection === "scissors" && computerSelection === "rock"){
-        console.log(`You selected ${playerSelection}, the computer selected ${computerSelection}: you loss :( `)
+        return `You selected ${playerSelection}, the computer selected ${computerSelection}: you loss :( `;
     }else if (playerSelection === "scissors" && computerSelection === "paper"){
-        console.log(`You selected ${playerSelection}, the computer selected ${computerSelection}: you Win :) `)   
+        return `You selected ${playerSelection}, the computer selected ${computerSelection}: you Win :) `;
     }else{
-        console.log(`You selected ${playerSelection}, the computer selected ${computerSelection}: you tie :/ `)
+        return `You selected ${playerSelection}, the computer selected ${computerSelection}: you tie :/ `;
     }
 }
 
@@ -46,6 +54,5 @@ function getComputerChoice (){
 //this is manual for not 
 let playerChoice = "scissors"
 
-//calling the function playRound with inputs from playerChoice value and the getComputerChoice function. 
-playRound(playerChoice, getComputerChoice());
-
+//calling the game method
+game();
